@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AlSaahib Privacy</title>
+  <meta name="description" content="What the AlSaahib test version collects, why, where it is kept, for how long, and how to delete your account.">
+  <meta name="theme-color" content="#efe8da" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#191716" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.ico" sizes="32x32 48x48">
+  <link rel="icon" href="assets/icons/favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="band band-slim">
+    <svg class="band-art" aria-hidden="true" focusable="false">
+      <defs>
+        <pattern id="band-tile" width="40" height="40" patternUnits="userSpaceOnUse">
+          <rect class="p-ground" width="40" height="40"/>
+          <rect class="p-star" x="6" y="6" width="28" height="28"/>
+          <rect class="p-star" x="6" y="6" width="28" height="28" transform="rotate(45 20 20)"/>
+          <rect class="p-centre" x="16" y="16" width="8" height="8" transform="rotate(45 20 20)"/>
+          <rect class="p-corner" x="-4" y="-4" width="8" height="8"/>
+          <rect class="p-corner" x="36" y="-4" width="8" height="8"/>
+          <rect class="p-corner" x="-4" y="36" width="8" height="8"/>
+          <rect class="p-corner" x="36" y="36" width="8" height="8"/>
+        </pattern>
+        <linearGradient id="band-fade" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" class="fade-top"/>
+          <stop offset="0.75" class="fade-end"/>
+        </linearGradient>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#band-tile)"/>
+      <rect width="100%" height="100%" fill="url(#band-fade)"/>
+    </svg>
+    <div class="wrap band-inner">
+      <nav class="top-nav" aria-label="Site">
+        <a class="home" href="index.html" aria-label="AlSaahib home"><img src="assets/icons/favicon-48.png" width="48" height="48" alt=""><span class="label">AlSaahib <span class="arabic" lang="ar" dir="rtl">الصَّاحِب</span></span></a>
+        <a href="privacy.html" aria-current="page">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap page">
+
+    <h1>AlSaahib privacy policy (test version)</h1>
+    <p class="meta">Last updated 23 November 2026.</p>
+
+    <p>This page explains what the AlSaahib test version collects, why, where it is kept and for how long. It is
+      written for people testing the app through TestFlight, Apple's app for trying apps before they are released.
+      If something here is unclear, email us.</p>
+
+    <section class="summary" id="short" aria-labelledby="short-title">
+      <h2 id="short-title">In short</h2>
+      <ul>
+        <li><strong>Your email</strong> is used to log you in and to reply to you. We never sell it or share it for
+          ads. A teacher sees a name made from it (the part before the "@"), not the address itself.</li>
+        <li><strong>Your voice</strong> in a teacher call goes live to your teacher. It is never recorded or
+          stored.</li>
+        <li><strong>Emails you send us</strong> are kept for one year, then deleted.</li>
+        <li><strong>When the test ends</strong>, testers' accounts and what our server holds for them are kept, so
+          they carry over to the released app. Your plan and notes stay on your phone.</li>
+        <li><strong>To delete your account</strong>, tap the person icon on Home, then Delete account. Or email us.
+          No ads, no analytics and no tracking in the app.</li>
+      </ul>
+    </section>
+
+    <nav class="toc" aria-label="On this page">
+      <p class="toc-title">On this page</p>
+      <ul>
+        <li><a href="#collect">What we collect</a></li>
+        <li><a href="#teacher-sees">What your teacher can see</a></li>
+        <li><a href="#phone">What stays on your phone</a></li>
+        <li><a href="#teaching">If you apply to teach</a></li>
+        <li><a href="#companies">Companies that handle data for us</a></li>
+        <li><a href="#how-long">How long we keep data</a></li>
+        <li><a href="#deleting-your-account">Deleting your account</a></li>
+        <li><a href="#rights">Your rights</a></li>
+        <li><a href="#website">This website</a></li>
+      </ul>
+    </nav>
+
+    <h2 id="who">Who runs the app</h2>
+    <p>AlSaahib is made and run by Abwab Studio ("we"), a small independent studio. We decide how your data is
+      used.</p>
+    <p>We are reached by email only: <a href="mailto:support@abwabstudio.com">support@abwabstudio.com</a>. A person
+      reads every message.</p>
+
+    <h2 id="adults">Adults only</h2>
+    <p>The test version is for people aged 18 or over. When you create an account you tick "I am 18 or older". The
+      teacher program also asks your birth year and does not accept anyone under 18. If you think a child has made an
+      account, email us and we will delete it.</p>
+
+    <h2 id="collect">What we collect, why, where it is kept and for how long</h2>
+    <p>"Our server" means our database at Supabase, the company that hosts it. The table lists each kind of data,
+      why we need it, where it is kept and for how long.</p>
+    <details>
+      <summary>Details: what we collect</summary>
+    <div class="table-wrap stack">
+      <table>
+        <thead>
+          <tr><th scope="col">What</th><th scope="col">Why</th><th scope="col">Where it is kept</th><th scope="col">How long</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Your email address and password</th>
+            <td data-label="Why">To make your account, let you log in, confirm your email and reset your password.
+              The password is stored only in a scrambled form, never as plain text.</td>
+            <td data-label="Where">Our server. The emails we send you go through Resend, a company that sends
+              email.</td>
+            <td data-label="How long">Until you delete your account.</td>
+          </tr>
+          <tr>
+            <th scope="row">A display name and an account number</th>
+            <td data-label="Why">Your account gets a random account number. Its display name is the part of your
+              email address before the "@", and you cannot change it yet. A teacher you are paired with sees this
+              name. If your email address contains your full name, your teacher will see it, so you may prefer to use
+              a different email.</td>
+            <td data-label="Where">Our server.</td>
+            <td data-label="How long">Until you delete your account.</td>
+          </tr>
+          <tr>
+            <th scope="row">Birth year, gender and time zone (only if you join the teacher program)</th>
+            <td data-label="Why">To check you are 18 or over, to pair you with a teacher of the same gender, and to
+              show call times in your time zone. Gender cannot be changed later.</td>
+            <td data-label="Where">Our server.</td>
+            <td data-label="How long">Until you delete your account.</td>
+          </tr>
+          <tr>
+            <th scope="row">Call preferences (only if you join the teacher program)</th>
+            <td data-label="Why">The best time of day for your call and your day off, so we can pair you with a
+              teacher and plan your calls. (Choosing your teacher is not offered yet.)</td>
+            <td data-label="Where">Our server.</td>
+            <td data-label="How long">Until you delete your account.</td>
+          </tr>
+          <tr>
+            <th scope="row">Call records (only if you have teacher calls)</th>
+            <td data-label="Why">For each call: when it was planned, who joined and when, which Quran page was open,
+              the teacher's marks on words of the page, the teacher's note, the ratings, and the next passage to
+              memorize. From these the server also keeps your progress with your teacher: which pages you passed,
+              mistakes per word, and your streak of calls. You see this after each call. We also keep simple
+              call-quality numbers (for example delay, lost sound and reconnections, with the app version and device
+              type) to fix bad connections.</td>
+            <td data-label="Where">Our server. The call itself runs through LiveKit, a company that carries live
+              audio.</td>
+            <td data-label="How long">Until you delete your account, or until your teacher deletes their account,
+              which also removes the calls you had with them.</td>
+          </tr>
+          <tr>
+            <th scope="row">Your voice during a call</th>
+            <td data-label="Why">So your teacher can hear you recite, and you can hear your teacher.</td>
+            <td data-label="Where">Sent live through LiveKit to the other person. <strong>Not recorded and not
+              stored.</strong></td>
+            <td data-label="How long">Not kept.</td>
+          </tr>
+          <tr>
+            <th scope="row">Notification records (only if you have teacher calls)</th>
+            <td data-label="Why">For each call reminder or call update our server prepares for you: what it was about
+              and when it was sent or read.</td>
+            <td data-label="Where">Our server.</td>
+            <td data-label="How long">Until you delete your account.</td>
+          </tr>
+          <tr>
+            <th scope="row">Safety reports</th>
+            <td data-label="Why">If you or someone else tells us about a problem in a call (by email for now), we keep
+              the report and what we did about it, so we can keep people safe.</td>
+            <td data-label="Where">Our support mailbox and, if needed, our server.</td>
+            <td data-label="How long">Kept after an account is deleted. The report (what happened and when) stays, but
+              it is no longer linked to the deleted account.</td>
+          </tr>
+          <tr>
+            <th scope="row">Emails you send us</th>
+            <td data-label="Why">To answer you and fix problems.</td>
+            <td data-label="Where">Our support mailbox, at a standard email provider.</td>
+            <td data-label="How long">One year, then we delete them. Ask us and we will delete yours sooner.
+              (Safety reports are kept as described above.)</td>
+          </tr>
+          <tr>
+            <th scope="row">Crash reports and TestFlight feedback</th>
+            <td data-label="Why">Apple sends us crash reports, and the screenshots and comments you choose to send
+              through TestFlight.</td>
+            <td data-label="Where">Apple (App Store Connect).</td>
+            <td data-label="How long">Apple decides this. See
+              <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </details>
+
+    <h2 id="admin">Who at AlSaahib can see your data</h2>
+    <p>The person who runs Abwab Studio is the administrator and can see all the data on our server, to run the test,
+      pair students with teachers and handle reports. Nobody else at AlSaahib has access.</p>
+
+    <h2 id="teacher-sees">What your teacher can see</h2>
+    <p>A teacher you are paired with sees:</p>
+    <ul>
+      <li>your display name, your gender and your time zone;</li>
+      <li>your calls with them: times, the page, their marks, notes and ratings, and your progress from those calls.</li>
+    </ul>
+    <p>Your teacher does not see your email address, your birth year, your own plan or your notes. Teachers agree not
+      to record calls or share what is said in them (see the <a href="terms.html">test terms</a>).</p>
+
+    <h2 id="not-collected">What we do not collect</h2>
+    <ul>
+      <li>No location, contacts, photos, camera or calendar.</li>
+      <li>No advertising identifier, no tracking across other apps or websites, and no analytics.</li>
+      <li>No payment details: the test is free.</li>
+      <li>No recordings of calls.</li>
+      <li>We do not sell your data or share it for advertising.</li>
+    </ul>
+
+    <h2 id="phone">What stays on your phone</h2>
+    <p>These are kept only on your phone, in the app's own storage. They are not sent to our server in this test
+      version:</p>
+    <ul>
+      <li>Your own memorization plan and your progress in it (what you have reviewed and memorized).</li>
+      <li>Your notes: the note layers and the marks you add to pages and verses.</li>
+      <li>Your answers from the first setup: your goals, minutes a day, how well you read, how much you know of the
+        rules of recitation, the script you chose, and which parts of the Quran you have memorized and how sure you
+        are of each.</li>
+      <li>That you ticked "I am 18 or older", with the date.</li>
+      <li>Your daily reminder choice. The daily reminder and the call reminders (15 and 2 minutes before a teacher
+        call) are set on your phone, only if you allow notifications.</li>
+      <li>Recitation audio you have played, kept for a while so it plays again without the internet.</li>
+    </ul>
+    <p><strong>Because these are on the phone only, they are not on a new phone if you log in there, and they are not
+      removed when you delete your account.</strong> Deleting the app removes them. They may be included in your own
+      iPhone or iCloud backup, like other apps' data. If you are signed in to iCloud, the app may also keep a small
+      copy of your plan and of which verses you know in your own iCloud account, so it can be restored if you
+      reinstall. We cannot see your iCloud data.</p>
+
+    <h2 id="permissions">Microphone and notifications</h2>
+    <ul>
+      <li><strong>Microphone.</strong> Used only during a teacher call, so your teacher can hear you. Your iPhone
+        asks your permission first, and you can turn it off in the Settings app.</li>
+      <li><strong>Notifications.</strong> Used for your daily reminder and for call reminders, only if you allow
+        them. They are set on your phone.</li>
+    </ul>
+    <p>Sending a recitation to another student to check is not part of this test version. If a later version adds
+      it, we will update this page first.</p>
+
+    <h2 id="teaching">If you apply to teach</h2>
+    <p>If you teach in the test, we also keep your gender, the languages you teach in, whether you hold an ijazah
+      (a license to teach recitation), a short bio, your time zone and the hours you can teach, so we can pair you
+      with students. These are kept on our server until you delete your account.</p>
+
+    <h2 id="companies">Companies that handle data for us</h2>
+    <p>We use these services to run the app: Supabase (our server), Resend (account emails), LiveKit (live call
+      audio), Apple (TestFlight) and Islamic Network (recitation audio). Each one handles your data only to provide
+      its service to us.</p>
+    <details>
+      <summary>Details: what each company sees</summary>
+    <div class="table-wrap stack">
+      <table>
+        <thead>
+          <tr><th scope="col">Company</th><th scope="col">What it does for us</th><th scope="col">What it sees</th><th scope="col">Its privacy policy</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Supabase</th>
+            <td data-label="What it does">Hosts our server: the database and sign-in.</td>
+            <td data-label="What it sees">Everything kept on "our server" above, and your IP address when the app
+              connects. Its sign-in service also keeps a log of sign-ups, log-ins and password resets, with your
+              email and IP address.</td>
+            <td data-label="Policy"><a href="https://supabase.com/privacy">supabase.com/privacy</a></td>
+          </tr>
+          <tr>
+            <th scope="row">Resend</th>
+            <td data-label="What it does">Sends the emails to confirm your account and reset your password, from
+              no-reply@mail.abwabstudio.com.</td>
+            <td data-label="What it sees">Your email address and the email it sends.</td>
+            <td data-label="Policy"><a href="https://resend.com/legal/privacy-policy">resend.com/legal/privacy-policy</a></td>
+          </tr>
+          <tr>
+            <th scope="row">LiveKit</th>
+            <td data-label="What it does">Carries the live audio of teacher calls.</td>
+            <td data-label="What it sees">Your voice while the call is live, the marks and page changes sent between
+              the two phones during the call, your account number and display name, and your IP address. LiveKit may
+              keep technical records of the call (who joined and when, connection quality). Calls are not
+              recorded.</td>
+            <td data-label="Policy"><a href="https://livekit.com/legal/privacy-policy">livekit.com/legal/privacy-policy</a></td>
+          </tr>
+          <tr>
+            <th scope="row">Apple</th>
+            <td data-label="What it does">TestFlight: getting the app, crash reports and feedback.</td>
+            <td data-label="What it sees">What TestFlight needs, under Apple's own terms.</td>
+            <td data-label="Policy"><a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></td>
+          </tr>
+          <tr>
+            <th scope="row">Islamic Network (the recitation audio host)</th>
+            <td data-label="What it does">Sends the recitation audio when you play a verse.</td>
+            <td data-label="What it sees">Your device's IP address and which verse's audio is asked for, like any
+              website you visit. Nothing else is sent.</td>
+            <td data-label="Policy"><a href="https://alquran.cloud/terms-and-conditions">alquran.cloud/terms-and-conditions</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </details>
+
+    <h2 id="where">Where your data is stored</h2>
+    <p>Our server is in the United States. If you live outside the United States, your data is sent there. Call
+      audio passes through LiveKit's servers while the call is live.</p>
+
+    <h2 id="how-long">How long we keep data</h2>
+    <ul>
+      <li>Account, teacher program and call data: until you delete your account. Your calls with a teacher are
+        also removed if that teacher deletes their account.</li>
+      <li>When the test ends: we keep testers' accounts and what our server holds for them, so your account carries
+        over to the released app and you can carry on where you left off. You can delete your account at any time,
+        during the test or after it.</li>
+      <li>Emails you send us: one year, then we delete them.</li>
+      <li>Backups: if our host keeps backup copies of our database, deleted data can stay in those copies until
+        they are replaced.</li>
+      <li>Sign-in log: Supabase's log of sign-ups, log-ins and password resets is kept for a limited time set by
+        Supabase. It is not removed when you delete your account.</li>
+    </ul>
+
+    <h2 id="deleting-your-account">Deleting your account</h2>
+    <p>In the app: tap the person icon on Home to open your profile, tap <strong>Delete account</strong>, then
+      <strong>Delete my account</strong>. Or email
+      <a href="mailto:support@abwabstudio.com?subject=Delete%20my%20account">support@abwabstudio.com</a> from the
+      address you signed up with. We will delete it within 7 days and email you when it is done.</p>
+    <p>Deleting your account removes, from our server:</p>
+    <ul>
+      <li>your sign-in (email and password) and your display name;</li>
+      <li>your birth year, gender, time zone and call preferences;</li>
+      <li>your calls and everything saved from them: marks, notes, ratings, passages and the progress worked out from
+        them;</li>
+      <li>your notification records and call-quality numbers;</li>
+      <li>your teaching details, if you teach.</li>
+    </ul>
+    <p>What stays:</p>
+    <ul>
+      <li>safety reports, no longer linked to your account;</li>
+      <li>an internal log that actions happened (for example "an account was deleted"), under an account number that
+        no longer leads to you. It holds no email, name or content;</li>
+      <li>Supabase's sign-in log and backups, for the limited time above;</li>
+      <li>everything on your phone (your plan, progress and notes). Delete the app to remove those.</li>
+    </ul>
+    <p>Deletion cannot be undone.</p>
+
+    <h2 id="rights">Your rights</h2>
+    <p>You can ask us for a copy of what our server holds about you, ask us to correct it, or ask us to delete it, by
+      emailing <a href="mailto:support@abwabstudio.com">support@abwabstudio.com</a>. We will answer within 30 days.
+      Depending on where you live, you may also be able to complain to the privacy regulator where you live.</p>
+
+    <h2 id="website">This website</h2>
+    <p>This website (abwabstudio.com) has no cookies, analytics or ads. It is hosted by GitHub Pages, which may log
+      your IP address to keep the service secure. See
+      <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's
+      privacy statement</a>.</p>
+
+    <h2 id="changes">Changes to this policy</h2>
+    <p>If we change what the app collects, we will update this page and its date before the change reaches you, and
+      tell testers in the TestFlight notes for that build.</p>
+
+    <p>Questions: <a href="mailto:support@abwabstudio.com">support@abwabstudio.com</a></p>
+
+  </main>
+
+  <footer class="wrap narrow site-footer">
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="support.html">Support</a>
+      <a href="credits.html">Credits</a>
+    </nav>
+    <p><a href="mailto:support@abwabstudio.com">support@abwabstudio.com</a></p>
+    <p class="credits">Quran text from the <a href="https://tanzil.net/">Tanzil Project</a>.
+      <a href="credits.html">Quran text and recitation credits</a></p>
+    <p>© 2026 Abwab Studio, a small independent studio. This website does not track you.</p>
+  </footer>
+</body>
+</html>

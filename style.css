@@ -1,0 +1,403 @@
+/* AlSaahib website: one stylesheet for every page.
+   No external requests: the fonts are self-hosted subsets in assets/fonts.
+   Colors and type follow the app's design tokens (limestone ground, ink, porphyry accent, jade). */
+
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/Inter-subset.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("assets/fonts/SpaceGrotesk-subset.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Amiri";
+  src: url("assets/fonts/Amiri-subset.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0600-06FF;
+}
+
+:root {
+  color-scheme: light dark;
+  --ground: #efe8da;
+  --surface: #fbf8f1;
+  --ink: #2e2623;
+  --muted: #5a524a;
+  --accent: #8c2b2b;          /* button fill */
+  --accent-hover: #6e1f1f;
+  --link: #8c2b2b;            /* links and the Arabic name */
+  --link-hover: #6e1f1f;
+  --on-accent: #fff7ec;
+  --tint: #f9ece6;
+  --jade-tint: #e3ede7;
+  --on-jade-tint: #1f5a4e;
+  --rule: #e4dbca;
+  --pat-star: #dccfb8;
+  --pat-centre: #c98e84;
+  --pat-corner: #a9c4ba;
+  --bezel: #2e2623;
+  --shadow-card: 0 1px 2px rgba(70, 50, 30, 0.10);
+  --shadow-raised: 0 18px 40px rgba(70, 50, 30, 0.18), 0 2px 6px rgba(70, 50, 30, 0.10);
+  --shadow-button: 0 6px 16px rgba(140, 43, 43, 0.22);
+  --wrap: 65rem;              /* about 1040 px */
+  --gutter: 1rem;             /* 16 px on phones */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #191716;
+    --surface: #24211f;
+    --ink: #f1eadb;
+    --muted: #bdb3a4;
+    --accent: #a8392f;
+    --accent-hover: #b94539;
+    --link: #e8a598;
+    --link-hover: #f4c4ba;
+    --on-accent: #fff7ec;
+    --tint: rgba(232, 165, 152, 0.14);
+    --jade-tint: rgba(111, 165, 149, 0.16);
+    --on-jade-tint: #bfd8cc;
+    --rule: #3a3531;
+    --pat-star: #2b2623;
+    --pat-centre: #6b312c;
+    --pat-corner: #2c463f;
+    --bezel: #0e0d0c;
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-raised: 0 18px 40px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.4);
+    --shadow-button: 0 6px 16px rgba(0, 0, 0, 0.35);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+img { max-width: 100%; height: auto; }
+
+a { color: var(--link); text-underline-offset: 0.15em; }
+a:hover { color: var(--link-hover); }
+:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 4px; }
+
+h1, h2, h3 {
+  font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+h1 { font-size: 1.85rem; margin: 0.5rem 0 1rem; }
+h2 { font-size: 1.35rem; margin: 2.25rem 0 0.6rem; }
+h3 { font-size: 1.1rem; margin: 1.5rem 0 0.3rem; }
+
+ul, ol { padding-left: 1.25rem; }
+li { margin: 0.4rem 0; }
+
+code { font-size: 0.95em; overflow-wrap: anywhere; }
+
+.arabic {
+  font-family: "Amiri", "Geeza Pro", "Noto Naskh Arabic", "Traditional Arabic", serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.skip {
+  position: absolute; left: -999px; top: 0.5rem; z-index: 10;
+  background: var(--surface); color: var(--ink); padding: 0.5rem 0.9rem; border-radius: 10px;
+}
+.skip:focus { left: 0.5rem; }
+
+/* ---------- Header band: the app's eight-point-star pattern, fading into the ground ---------- */
+
+.band { position: relative; overflow: hidden; }
+.band-art { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: block; }
+.p-ground { fill: var(--ground); }
+.p-star { fill: var(--pat-star); }
+.p-centre { fill: var(--pat-centre); }
+.p-corner { fill: var(--pat-corner); }
+.fade-top { stop-color: var(--ground); stop-opacity: 0.35; }
+.fade-end { stop-color: var(--ground); stop-opacity: 1; }
+
+.band-inner { position: relative; }
+
+.top-nav {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0 1.1rem;
+  padding-top: 0.75rem; font-size: 0.95rem;
+}
+.top-nav .home {
+  margin-right: auto; gap: 0.5rem;
+  color: var(--ink); text-decoration: none; font-weight: 600;
+  font-family: "Space Grotesk", -apple-system, sans-serif;
+}
+.top-nav .home img { width: 32px; height: 32px; border-radius: 8px; }
+.top-nav a { min-height: 44px; display: inline-flex; align-items: center; }
+.top-nav a[aria-current="page"] { color: var(--ink); text-decoration: none; font-weight: 600; }
+
+.brand {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 2.25rem 0 0.5rem;
+}
+.brand img {
+  width: 72px; height: 72px; border-radius: 17px; flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(70, 50, 30, 0.18);
+}
+.brand > div {
+  padding: 0.35rem 0.85rem; border-radius: 16px;
+  background: var(--ground); background: color-mix(in srgb, var(--ground) 90%, transparent);
+}
+.brand-name { margin: 0; font-size: 2rem; line-height: 1.15; }
+.brand-name .arabic { font-size: 0.9em; color: var(--link); margin-left: 0.35rem; white-space: nowrap; }
+
+/* ---------- Landing page ---------- */
+
+.hero {
+  display: grid; gap: 2rem; align-items: center;
+  padding-top: 1.5rem; padding-bottom: 2rem;
+}
+.hero h2 {
+  font-size: clamp(1.75rem, 6.5vw, 2.6rem); line-height: 1.12;
+  margin: 0 0 1rem; letter-spacing: -0.015em;
+}
+.lede { font-size: 1.1rem; margin: 0 0 1rem; max-width: 34rem; }
+.pill {
+  display: inline-block; padding: 0.3rem 0.8rem; border-radius: 999px;
+  background: var(--jade-tint); color: var(--on-jade-tint);
+  font-size: 0.85rem; font-weight: 600; margin: 0 0 1rem;
+}
+
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 0.75rem; }
+.button {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 52px; padding: 0 1.5rem; border-radius: 26px;
+  font-weight: 600; font-size: 1rem; text-decoration: none; text-align: center;
+}
+.button-primary { background: var(--accent); color: var(--on-accent); box-shadow: var(--shadow-button); }
+.button-primary:hover { background: var(--accent-hover); color: var(--on-accent); }
+.button-secondary { background: var(--surface); color: var(--ink); box-shadow: var(--shadow-card); }
+.button-secondary:hover { color: var(--ink); background: var(--tint); }
+.action-note { font-size: 0.92rem; color: var(--muted); margin: 0; max-width: 34rem; }
+
+/* Phone frame drawn in CSS: rounded corners, thin border, soft shadow. */
+.phone {
+  margin: 0 auto; width: 100%; max-width: 17.5rem;
+  padding: 0.5rem; border-radius: 2.6rem;
+  background: var(--bezel);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-raised);
+}
+.phone img { display: block; width: 100%; height: auto; border-radius: 2.15rem; background: var(--surface); }
+.hero .phone { max-width: 18.5rem; }
+
+figure { margin: 0; }
+figcaption { font-size: 0.88rem; color: var(--muted); text-align: center; margin-top: 0.9rem; line-height: 1.45; }
+
+.section { padding-top: 2.5rem; padding-bottom: 1rem; scroll-margin-top: 1rem; }
+.section h2.section-title { margin-top: 0; font-size: clamp(1.45rem, 5vw, 1.9rem); }
+.section-intro { color: var(--muted); max-width: 36rem; margin-top: 0; }
+
+.feature {
+  display: grid; gap: 1.5rem; align-items: center;
+  padding: 1.75rem 0 2rem; border-top: 1px solid var(--rule);
+}
+.feature.first { border-top: 0; }
+.feature h3 { font-size: 1.3rem; margin: 0 0 0.5rem; }
+.feature p { margin: 0 0 0.75rem; max-width: 32rem; }
+.eyebrow {
+  display: block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--link); margin-bottom: 0.4rem;
+}
+
+.card {
+  background: var(--surface); border-radius: 20px; padding: 1.25rem 1.25rem 0.75rem;
+  box-shadow: var(--shadow-card);
+}
+.card h3 { margin-top: 0; }
+.card ul { margin-top: 0.25rem; }
+
+.facts { list-style: none; padding: 0; margin: 0.5rem 0 1rem; }
+.facts li { position: relative; padding-left: 1.6rem; margin: 0.7rem 0; }
+.facts li::before {
+  content: ""; position: absolute; left: 0.1rem; top: 0.5em;
+  width: 0.6rem; height: 0.6rem; background: var(--pat-centre); transform: rotate(45deg); border-radius: 1px;
+}
+
+.split { display: grid; gap: 1rem; }
+
+.info { list-style: none; padding: 0; margin: 0 0 1rem; display: grid; gap: 0.6rem; }
+.info li {
+  margin: 0; padding: 0.85rem 1rem; background: var(--surface); border-radius: 16px;
+  box-shadow: var(--shadow-card);
+}
+
+/* ---------- Text pages (privacy, terms, support, credits, 404) ---------- */
+
+.page { max-width: 46rem; padding-top: 0.5rem; padding-bottom: 1rem; }
+
+/* Tables: scroll sideways inside their own box on a phone, never the page. */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0.75rem 0 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--surface);
+}
+table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+th, td { text-align: left; vertical-align: top; padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--rule); }
+tr:last-child td, tr:last-child th { border-bottom: 0; }
+th { font-weight: 600; }
+thead th { background: var(--tint); }
+td a { overflow-wrap: anywhere; }
+
+/* On a phone, each table row becomes a card: the row's name first, then each value under its column name. */
+@media (max-width: 40rem) {
+  .stack { overflow-x: visible; }
+  .stack table, .stack tbody, .stack tr, .stack th, .stack td { display: block; width: 100%; }
+  .stack thead {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+  }
+  .stack tr { padding: 0.75rem 0.9rem; border-bottom: 1px solid var(--rule); }
+  .stack tr:last-child { border-bottom: 0; }
+  .stack th, .stack td { padding: 0.2rem 0; border-bottom: 0; }
+  .stack th[scope="row"] { font-size: 1.02rem; padding-bottom: 0.35rem; }
+  .stack td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--muted);
+    margin-top: 0.35rem;
+  }
+}
+
+/* "On this page" jump links. */
+.toc {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+}
+.toc-title { margin: 0; font-weight: 600; }
+.toc ul { margin: 0.25rem 0 0; }
+.toc li { margin: 0; }
+.toc-inline { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0 1rem; }
+.toc-inline li { margin: 0; }
+/* Jump links and short inline links: at least 44 px tall to tap. */
+.toc a, .toc-inline a, .tap { display: inline-flex; align-items: center; min-height: 44px; }
+
+.meta { color: var(--muted); font-size: 0.92rem; }
+
+.note {
+  background: var(--tint);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+}
+
+pre.notice {
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 12px;
+  padding: 0.75rem 0.9rem; font-size: 0.8rem; line-height: 1.45;
+  white-space: pre-wrap; overflow-wrap: anywhere; max-width: 100%;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  margin-top: 2.5rem; padding: 1.5rem 0 2.5rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted); font-size: 0.92rem;
+}
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 0 1.25rem; margin-bottom: 0.5rem; }
+.site-footer nav a { min-height: 44px; display: inline-flex; align-items: center; }
+.site-footer p { margin: 0.4rem 0; max-width: 46rem; }
+.site-footer .credits a { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* ---------- Wider screens ---------- */
+
+@media (min-width: 40rem) {
+  :root { --gutter: 1.5rem; }
+  .brand-name { font-size: 2.3rem; }
+  .split { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+}
+
+@media (min-width: 52rem) {
+  :root { --gutter: 2rem; }
+  h1 { font-size: 2.1rem; }
+  .hero { grid-template-columns: 1.15fr 0.85fr; gap: 3rem; padding-top: 2.5rem; }
+  .feature { grid-template-columns: 0.8fr 1.2fr; gap: 3rem; padding: 2.5rem 0; }
+  .feature.flip > figure { order: 2; }
+  .feature .phone { max-width: 16.5rem; }
+  .feature.teacher { grid-template-columns: 1.2fr 0.8fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* Keep the header links readable over the pattern. */
+.top-nav a:not(.home) {
+  padding: 0 0.6rem; border-radius: 999px;
+  background: var(--ground);
+  background: color-mix(in srgb, var(--ground) 88%, transparent);
+}
+.top-nav .home { padding-right: 0.6rem; border-radius: 999px; background: var(--ground); background: color-mix(in srgb, var(--ground) 88%, transparent); }
+
+/* Text pages: a shorter band, and header, text and footer share one narrower column. */
+.band-slim .band-inner { padding-bottom: 2.25rem; }
+.band-slim .wrap, .narrow { max-width: 46rem; }
+
+/* Header on phones: the home link shows only the icon so the nav fits on one row. */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+@media (max-width: 40rem) {
+  .top-nav { gap: 0 0.4rem; font-size: 0.92rem; }
+  .top-nav .home .label { position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+  .top-nav .home { padding-right: 0.3rem; }
+  .top-nav a:not(.home) { padding: 0 0.5rem; }
+}
+.index-nav { justify-content: flex-end; }
+
+/* Landing page: summary box, steps and the collapsed list of known gaps. */
+.summary {
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 16px;
+  padding: 0.9rem 1.1rem; margin: 1rem 0 1.5rem;
+}
+.summary h2 { margin-top: 0.25rem; }
+.summary ul { margin: 0.25rem 0 0.25rem; }
+.steps { padding-left: 1.4rem; margin: 0.5rem 0 1rem; max-width: 34rem; }
+.steps li { margin: 0.5rem 0; padding-left: 0.2rem; }
+.plain-address { font-weight: 600; user-select: all; -webkit-user-select: all; overflow-wrap: anywhere; }
+details { margin: 0.75rem 0 1rem; }
+details > summary {
+  cursor: pointer; font-weight: 600; padding: 0.6rem 0; color: var(--link);
+}
+.card details { margin: 0.25rem 0 0.75rem; }
+.small-note { font-size: 0.9rem; color: var(--muted); }

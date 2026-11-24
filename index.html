@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AlSaahib: memorize the Quran, a little each day</title>
+  <meta name="description" content="AlSaahib is an iPhone app for memorizing the Quran: a plan for each day, the Quran page with listen, repeat and hide, your own notes on the page, and optional 10-minute calls with a teacher. A free test for adults is open now, by invitation.">
+  <link rel="canonical" href="https://abwabstudio.com/">
+  <meta name="theme-color" content="#efe8da" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#191716" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AlSaahib">
+  <meta property="og:title" content="AlSaahib: memorize the Quran, a little each day">
+  <meta property="og:description" content="A plan for each day, the Quran page with listen, repeat and hide, your own notes, and optional calls with a teacher. Free test for adults on iPhone and iPad.">
+  <meta property="og:url" content="https://abwabstudio.com/">
+  <meta property="og:image" content="https://abwabstudio.com/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The AlSaahib app icon, an eight-point star around the Arabic letter daad, beside the name AlSaahib.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.ico" sizes="32x32 48x48">
+  <link rel="icon" href="assets/icons/favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/Inter-subset.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="band">
+    <svg class="band-art" aria-hidden="true" focusable="false">
+      <defs>
+        <pattern id="band-tile" width="40" height="40" patternUnits="userSpaceOnUse">
+          <rect class="p-ground" width="40" height="40"/>
+          <rect class="p-star" x="6" y="6" width="28" height="28"/>
+          <rect class="p-star" x="6" y="6" width="28" height="28" transform="rotate(45 20 20)"/>
+          <rect class="p-centre" x="16" y="16" width="8" height="8" transform="rotate(45 20 20)"/>
+          <rect class="p-corner" x="-4" y="-4" width="8" height="8"/>
+          <rect class="p-corner" x="36" y="-4" width="8" height="8"/>
+          <rect class="p-corner" x="-4" y="36" width="8" height="8"/>
+          <rect class="p-corner" x="36" y="36" width="8" height="8"/>
+        </pattern>
+        <linearGradient id="band-fade" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" class="fade-top"/>
+          <stop offset="0.75" class="fade-end"/>
+        </linearGradient>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#band-tile)"/>
+      <rect width="100%" height="100%" fill="url(#band-fade)"/>
+    </svg>
+    <div class="wrap band-inner">
+      <nav class="top-nav index-nav" aria-label="Site">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="support.html">Support</a>
+      </nav>
+      <div class="brand">
+        <img src="assets/icons/icon-192.png" width="192" height="192"
+          alt="The AlSaahib icon: an eight-point star around the Arabic letter daad (ض)">
+        <div>
+          <h1 class="brand-name">AlSaahib <span class="arabic" lang="ar" dir="rtl">الصَّاحِب</span></h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="wrap hero" aria-labelledby="hero-title">
+      <div>
+        <p class="pill">Free test for adults · iPhone and iPad · no Android yet</p>
+        <h2 id="hero-title">Memorize the Quran, a little each day.</h2>
+        <div class="actions">
+          <!-- The one place for the TestFlight link: see README, "Where to paste the TestFlight link". -->
+          <a id="join-link" class="button button-primary" href="mailto:support@abwabstudio.com?subject=AlSaahib%20test%20invite&amp;body=My%20first%20name%3A%20%0AThe%20email%20address%20for%20the%20TestFlight%20invite%3A%20%0AA%20friend%20sent%20me%20(their%20name%2C%20if%20so)%3A%20%0A">Ask for an invite</a>
+          <a class="button button-secondary" href="#each-day">How it works</a>
+        </div>
+        <p id="join-note" class="action-note">The test is by invitation. Email
+          <span class="plain-address">support@abwabstudio.com</span> with your first name and the email address
+          you want the TestFlight invite sent to (the one you use for your Apple ID is easiest). If a friend sent
+          you, mention their name. We usually reply within 2 working days.</p>
+        <p class="lede">Each day AlSaahib shows you what to memorize and what to revise, on the page of the Quran.
+          Listen, repeat, then hide the lines and recite from memory.</p>
+      </div>
+      <figure>
+        <div class="phone">
+          <img src="assets/screens/home.jpg" width="780" height="1508" fetchpriority="high"
+            alt="The AlSaahib Home screen. It says As-salamu alaykum, here's your plan for today. A red card reads Memorize today: Al-Mulk, verses 1 to 5, with Start memorizing and Listen buttons. Below are Revise today: An-Naba, a teacher call card, Open the Quran, and Your notes.">
+        </div>
+        <figcaption>Home: today's plan at a glance. Sample plan, names and times.</figcaption>
+      </figure>
+    </section>
+
+    <section id="join" class="wrap section" aria-labelledby="join-title">
+      <h2 id="join-title" class="section-title">How to join the test</h2>
+      <ol class="steps">
+        <li><strong>Email us</strong> at <span class="plain-address">support@abwabstudio.com</span> with your first
+          name and the email address for your invite.</li>
+        <li><strong>Install TestFlight</strong>, Apple's free app for trying apps before they are released, from the
+          App Store. Then open our invite on your iPhone and tap Install.</li>
+        <li><strong>Use AlSaahib for a few days</strong>, as much as suits you. Then tell us what confused you, what
+          broke and what you liked: take a screenshot in the app and tap Share Beta Feedback, or just email us.</li>
+      </ol>
+    </section>
+
+    <section id="each-day" class="wrap section" aria-labelledby="each-day-title">
+      <h2 id="each-day-title" class="section-title">What you do each day</h2>
+      <p class="section-intro">You set up your plan once: how much time you have each day and what you already know.
+        Then the app does the planning.</p>
+
+      <article class="feature first">
+        <figure>
+          <div class="phone">
+            <img src="assets/screens/reader-memorize.jpg" width="780" height="1516" loading="lazy" decoding="async"
+              alt="Surah Al-Mulk, page 562, open in the app. The first five verses are clear and the rest of the page is faded. A bar at the bottom says Memorizing Al-Mulk, verses 1 to 5, with a button: I've memorized this.">
+          </div>
+        </figure>
+        <div>
+          <span class="eyebrow">Memorize and revise</span>
+          <h3>A small portion, every day</h3>
+          <p><strong>Memorize today</strong> gives you a few new verses. Tap Start memorizing and they open on the
+            page, with the rest of the page faded. When you know them, tap <strong>I've memorized this</strong>.</p>
+          <p><strong>Revise today</strong> brings back a page you already know, so it stays with you. Recite it, then
+            tap Done revising.</p>
+        </div>
+      </article>
+
+      <article class="feature flip">
+        <figure>
+          <div class="phone">
+            <img src="assets/screens/reader-hidden.jpg" width="780" height="1516" loading="lazy" decoding="async"
+              alt="Page 562 with every line covered by a plain bar, so only the surah name and the Bismillah show. The verse-end markers stay in place. Along the bottom are the buttons Repeat, Hide (switched on), Play, Notes and Visuals.">
+          </div>
+          <figcaption>Hide: the lines are covered, and the verse markers stay so you can see where each verse
+            ends.</figcaption>
+        </figure>
+        <div>
+          <span class="eyebrow">The Quran page</span>
+          <h3>Listen, repeat, hide</h3>
+          <p>Turn the pages as in a printed copy of the Quran (a mushaf). Tap <strong>Play</strong> to hear the
+            recitation of Sheikh Mahmoud Khalil al-Husary (may Allah have mercy on him), verse by verse. Turn on
+            <strong>Repeat</strong> to keep it going while you learn by ear.</p>
+          <p>Then turn on <strong>Hide</strong>. The lines are covered and you recite from memory. Unsure of a line?
+            Tap it to see just that line.</p>
+        </div>
+      </article>
+
+      <article class="feature">
+        <figure>
+          <div class="phone">
+            <img src="assets/screens/notes-page.jpg" width="780" height="1550" loading="lazy" decoding="async"
+              alt="Notes on Al-Mulk, page 562. Some words are circled in red, some are highlighted in gold and one is underlined with a blue wavy line. A tool bar holds the pen, highlighter, written note and eraser. Below, a list of layers, each with an eye button to hide or show it.">
+          </div>
+        </figure>
+        <div>
+          <span class="eyebrow">Your notes</span>
+          <h3>Write on the page, in layers</h3>
+          <p>Mark the page as you would a printed copy with a pencil: a pen, a highlighter, or a written note on a
+            word.</p>
+          <p>Each time you go over a page you can start a new layer, like a clear sheet on top of the page. Hide or
+            show each layer with a tap, and mark a note resolved once it is fixed. The Notes tab lists every page you
+            have marked.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="teacher" class="wrap section" aria-labelledby="teacher-title">
+      <h2 id="teacher-title" class="section-title">With a teacher</h2>
+      <div class="feature teacher first">
+        <div>
+          <p class="lede">A teacher is optional. You are paired only with a teacher of your own gender, and we
+            approve every teacher ourselves before they can teach.</p>
+          <ul class="facts">
+            <li>Calls are 10 minutes, audio only. No video.</li>
+            <li>Your teacher can show you the page or hide it, so you recite from memory.</li>
+            <li>As you recite, your teacher marks slips on the words of the page: one color for tajweed (the rules
+              of recitation), another for a memorization slip. You see the marks as they are made.</li>
+            <li>After the call you can see your teacher's marks and a short note.</li>
+            <li>During the test we pair students and teachers by hand, and places are limited, so we cannot promise
+              everyone a teacher.</li>
+          </ul>
+          <p><a class="tap" href="support.html#q-teacher">How to ask for a teacher</a></p>
+        </div>
+        <figure>
+          <div class="phone">
+            <img src="assets/screens/call-teacher.jpg" width="780" height="1694" loading="lazy" decoding="async"
+              alt="The teacher's side of a call with a student. At the top, the choice of what the student sees: Nothing, or The page. Below, page 562 with a few words marked, buttons for Tajweed and Memorization marks, a box to write a note for the student, and Mute and End call.">
+          </div>
+          <figcaption>The teacher's screen during a call. Sample student name.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="test" class="wrap section" aria-labelledby="test-title">
+      <h2 id="test-title" class="section-title">The test</h2>
+      <div class="split">
+        <div class="card">
+          <h3>What it is</h3>
+          <ul class="facts">
+            <li>Free. Nothing is charged during the test.</li>
+            <li>For adults, 18 or older.</li>
+            <li>iPhone or iPad with iOS 17 or later, through Apple's TestFlight app.</li>
+            <li>You make an account with your email address and a password.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Before you start</h3>
+          <ul class="facts">
+            <li>This is an early version. Your plan and notes are saved on your phone only, and a new test build
+              could lose them, so keep a copy of anything you cannot redo.</li>
+          </ul>
+          <details>
+            <summary>Known gaps in this version</summary>
+            <ul class="facts">
+              <li>There is no Settings screen yet. To change your setup answers, email us.</li>
+              <li>The Learn tab says "Coming soon", and Visuals on the Quran page is greyed out and not ready yet.</li>
+              <li>Only the standard Madani page for now. The IndoPak page is coming.</li>
+              <li>Community (sending a recitation to another student to check) is not in this test.</li>
+              <li>Sign in with Apple or Google is not available yet.</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="your-information" class="wrap section" aria-labelledby="info-title">
+      <h2 id="info-title" class="section-title">Your information</h2>
+      <ul class="info">
+        <li><strong>Your email:</strong> used to log you in and to reply to you. Never sold or shared for ads. Emails
+          you send us are deleted after one year.</li>
+        <li><strong>Your voice:</strong> in a teacher call, your teacher hears it live. It is never recorded or
+          stored.</li>
+        <li><strong>Your name:</strong> a teacher sees a name made from your email address (the part before the "@"),
+          not your email address itself.</li>
+        <li><strong>Your plan and notes</strong> are kept on your phone. Your account is kept on our server when the
+          test ends, so it carries over to the released app. You can delete it in the app at any time.</li>
+      </ul>
+      <p>No ads, no analytics, no tracking. <a class="tap" href="privacy.html">Read the privacy policy</a></p>
+    </section>
+  </main>
+
+  <footer class="wrap site-footer">
+    <nav aria-label="Footer">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="support.html">Support</a>
+      <a href="credits.html">Credits</a>
+    </nav>
+    <p><a href="mailto:support@abwabstudio.com">support@abwabstudio.com</a></p>
+    <p class="credits">Quran text from the <a href="https://tanzil.net/">Tanzil Project</a>.
+      <a href="credits.html">Quran text and recitation credits</a></p>
+    <p>The icon shows the letter ض (daad): Arabic is known as the language of the daad.</p>
+    <p>© 2026 Abwab Studio, a small independent studio. This website does not track you.</p>
+  </footer>
+</body>
+</html>

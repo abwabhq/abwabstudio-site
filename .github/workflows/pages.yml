@@ -1,0 +1,41 @@
+name: Website
+
+# Publishes the site to GitHub Pages (abwabstudio.com, from CNAME) on every push to main,
+# and by hand from the Actions tab (Run workflow).
+# Only the served files are uploaded: the pages, the stylesheet, assets/, CNAME, favicon.ico,
+# robots.txt and sitemap.xml. README.md, tools/ and .github/ are not served.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - name: Collect the public files
+        run: |
+          mkdir _site
+          cp *.html style.css CNAME favicon.ico robots.txt sitemap.xml _site/
+          cp -R assets _site/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
